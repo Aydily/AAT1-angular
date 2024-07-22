@@ -1,0 +1,27 @@
+<section>
+<h1>AAT2</h1>
+<span>Cantidad de parejas:</span>
+<input type="text" placeholder="Cantidad de parejas" [(ngModel)]="cantidad">
+<button (click)="inicio()">Iniciar juego</button>
+
+<button type="button" (click)="inicio()">Reiniciar</button>
+</section>
+
+<div class="wrapper">
+
+	<div class="cols">
+		<div *ngFor="let tarjeta of cartas; let i = index" (click)="mostrar(i)" [ngClass]="clases(i)"  >
+		  <div class="container" [ngClass]="{'hover': hoverStates[i]}"  [ngClass]="{'hover': tarjetaMostrar[i]}">
+			<div class="front" style="background-image: url('https://pm1.aminoapps.com/7736/2fdb767f07381613f54facf0d3ed0308ed1e8fbcr1-736-1309v2_hq.jpg')">
+			  <div class="inner">
+				<p>AAT2</p>
+				<span>Memoria</span>
+			  </div>
+			</div>
+			<div class="back" style="background-image: url({{tarjeta}}); background-repeat: no-repeat;background-size: cover">
+			  <div class="inner"></div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	
